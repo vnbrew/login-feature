@@ -40,9 +40,12 @@ android {
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'androidx.palette:palette-ktx:1.0.0'
+    implementation "androidx.compose.compiler:compiler:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1"
+    implementation "androidx.navigation:navigation-runtime-ktx:2.4.2"
     implementation "androidx.navigation:navigation-compose:2.4.2"
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.compiler:compiler:$compose_version"
@@ -51,4 +54,8 @@ dependencies {
 
     implementation 'com.google.dagger:dagger:2.41'
     kapt 'com.google.dagger:dagger-compiler:2.41'
+
+    api project(':login-feature:protocol')
+    implementation project(':data-module:protocol')
+    implementation project(':common-module:common')
 }
